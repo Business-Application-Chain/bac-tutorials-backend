@@ -1,5 +1,5 @@
 MOCHA_TIMEOUT = 10000
-BUNA_REPERTORY = git@10.0.248.200:Common/buna-js.git
+BUNA_REPERTORY = http://10.0.248.200/Common/buna-golang.git
 
 
 
