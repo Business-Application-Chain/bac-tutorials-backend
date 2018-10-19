@@ -36,7 +36,7 @@ router.get('/', function (req, res, next) {
     })
 
     workerProcess.stderr.on('data', function (data) {
-      res.send({ code: 1, stdout: listErr });
+      // res.send({ code: 1, stdout: listErr });
     });
 
     // workerProcess.stderr.on('end', function(){
