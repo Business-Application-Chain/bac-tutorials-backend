@@ -5,11 +5,11 @@ const path = require('path');
 const uuidV1 = require('uuid/v1');
 const fs = require('fs');
 
-router.get('/', function (req, res, next) {
+router.post('/', function (req, res, next) {
   let fileName = uuidV1();
   fileName = fileName + ".js";
   let filePath = path.join(__dirname, "../buna-js", fileName);
-  let bunaData = req.query.code;
+  let bunaData = req.body.code;
   let data = "'use strict'; import Buna from './lib/buna'; let buna = new Buna(); buna.runWeb([" + "'" + bunaData + "'" + "]);";
   fs.writeFile(filePath, data, { overwrite: false }, function (err) {
     if (err) throw err;
@@ -31,7 +31,7 @@ router.get('/', function (req, res, next) {
     });
 
     workerProcess.stdout.on('end', function () {
-      fs.unlinkSync(filePath);
+      // fs.unlinkSync(filePath);
       res.send({ code: 1, stdout: list })
     })
 

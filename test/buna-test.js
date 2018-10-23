@@ -17,9 +17,9 @@ describe('#router buna', () => {
     describe('buna', () => {
         it('print and var, should return 1', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: printAndVar }
+                    form: { code: printAndVar }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -30,9 +30,9 @@ describe('#router buna', () => {
 
         it('function, should return 1', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: func }
+                    form: { code: func }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -43,9 +43,9 @@ describe('#router buna', () => {
 
         it('statAndState, should return assigned and nil', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: statAndState }
+                    form: { code: statAndState }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -56,9 +56,9 @@ describe('#router buna', () => {
 
         it('if statement, should return [A method]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: ifStat }
+                    form: { code: ifStat }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -69,9 +69,9 @@ describe('#router buna', () => {
 
         it('else statement, should return [A method]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: elseStat }
+                    form: { code: elseStat }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -82,9 +82,9 @@ describe('#router buna', () => {
 
         it('where, should return [0,1,1,2,3]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: whereCheck }
+                    form: { code: whereCheck }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -95,9 +95,9 @@ describe('#router buna', () => {
 
         it('for, should return [0,1,2]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: forCheck }
+                    form: { code: forCheck }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -108,9 +108,9 @@ describe('#router buna', () => {
 
         it('function Closure, should return [2,3]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: funClosure }
+                    form: { code: funClosure }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -121,9 +121,9 @@ describe('#router buna', () => {
 
         it('static scope, should return [global,global]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: staticScope }
+                    form: { code: staticScope }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -134,9 +134,9 @@ describe('#router buna', () => {
         
         it('class check, should return [Foo instance,Foo instance, Foo instance]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: classCheck }
+                    form: { code: classCheck }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -147,9 +147,9 @@ describe('#router buna', () => {
         
         it('class inheritance, should return [A method]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: inheritance }
+                    form: { code: inheritance }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
@@ -160,9 +160,9 @@ describe('#router buna', () => {
 
         it('error check, should return [string error]', function (done) {
             request
-                .get({
+                .post({
                     url: 'http://127.0.0.1:3000/buna',
-                    qs: { code: errorCheck }
+                    form: { code: errorCheck }
                 }, function (error, response, body) {
                     let bodyParse = JSON.parse(body);
                     assert.equal(1, bodyParse.code);
